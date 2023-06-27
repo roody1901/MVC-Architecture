@@ -1,0 +1,124 @@
+﻿@model Customer
+@using (Html.BeginForm())
+{
+@*    <div>
+        Id: @Html.TextBoxFor(a => a.Id)
+    </div>
+    
+    <div>
+        Fullname: @Html.TextBoxFor(a => a.Fullname)
+    </div>
+    
+    <div>
+        Adress: @Html.TextBoxFor(a => a.Adress)
+    </div>
+    
+    <div>
+        Email: @Html.TextBoxFor(a => a.Email)
+    </div>
+    
+    <div>
+        Contact: @Html.TextBoxFor(a => a.Contact)
+    </div>
+
+        <div>
+        AtmPin: @Html.TextBoxFor(a => a.Atmpin)
+    </div>
+
+    <div>
+        Account Type: @Html.TextBoxFor(a => a.AcntType)
+    </div>
+
+    <div>
+        Account Number: @Html.TextBoxFor(a => a.AcntNum)
+    </div>
+
+    <div>
+        Balance: @Html.TextBoxFor(a => a.Balance)
+    </div>
+    <div>
+        <input type="submit" value="AddCustomer"/>
+    </div>
+    <div>@ViewBag.Message</div>*@
+    <head>
+
+     <title>ATM Ragistration Garima</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <!-- MAIN CSS -->
+   
+
+</head>
+<body style="background-color: #fce2d5;background-image: none;">
+
+    <section>
+		<div class="header">
+			<img src="~/atmlogo.jpeg" alt="Girl in a jacket" style="width:70px;height:40px;">
+				<div class="menu">
+				  @Html.ActionLink("Home", "Index","Home")
+				  <a href="homeloan.asp">Home Loans</a>
+				  <a href="investing.asp">Investing</a>
+				  <a href="about.asp">About Us</a>
+				  <a  href="help.asp" style="/* background: rebeccapurple; */border: 1px solid rebeccapurple;padding: 7px 10px;border-radius: 6px;color: rebeccapurple;font-weight: 600;font-family: sans-serif;font-size: 15px;"> HELP?</a>
+				</div>
+			
+		</div>
+	</section>
+	<section style="display: flex;">
+		<div class="sec-text">
+		   <h1 style="font-size: 40px;margin-bottom: 15px;">Update Customer</h1>
+		    <form asp-controller="Customer" asp-action="Edit" method="post">
+		   <div class="container">
+	           @* <label for="uname"><b>ID</b><span asp-validation-for="Id"></span></label>*@
+			  @Html.HiddenFor(a=>a.Id)              
+				<label for="uname"><b>Name</b><span asp-validation-for="Fullname"></span></label>
+				@Html.TextBoxFor(a => a.Fullname)
+				<label for="uname"><b>Address</b><span asp-validation-for="Adress"></span></label>
+				@Html.TextBoxFor(a => a.Adress)
+				<label for="uname"><b>Email</b><span asp-validation-for="Email"></span></label>
+				@Html.TextBoxFor(a => a.Email)
+				<label for="uname"><b>Contact</b><span asp-validation-for="Contact"></span></label>
+				 @Html.TextBoxFor(a => a.Contact)
+				@*<label for="uname"><b>ATM Pin</b><span asp-validation-for="Atmpin"></span></label>*@
+				@Html.HiddenFor(a => a.Atmpin)
+				<label for="uname"><b>Account Type</b><span asp-validation-for="AccountType"></span></label>
+				@Html.TextBoxFor(a => a.AccountType)
+               @* <label for="uname"><b>Account Number</b><span asp-validation-for="AcntNum"></span></label>*@
+				@Html.HiddenFor(a => a.AccountNumber)
+               @* <label for="uname"><b>Balance</b><span asp-validation-for="Balance"></span></label>*@
+				@Html.HiddenFor(a => a.Balance)
+			
+			<button  class="loginbtn" type="submit">Update Data</button>         
+             <div style="text-align:center;">@ViewBag.Message</div>
+                 
+             
+			</div>
+			</form>
+			<button class="button" style="background: rebeccapurple;">@Html.ActionLink("GetAll", "GetAll",null,new{style="color:white"})</button>
+		</div>
+		<div class="sec-img" style="padding-top: 120px;">
+		   <img src="~/reggimg.jpeg" alt="Girl in a jacket" style="width:620px;height:500px;">
+		</div>
+	</section>
+
+     
+
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/jquery.magnific-popup.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+}
+

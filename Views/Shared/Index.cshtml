@@ -1,0 +1,65 @@
+﻿
+<html lang="en">
+<head>
+
+     <title>ATM Garima</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <!-- MAIN CSS -->
+ <link rel="stylesheet" href="StyleSheet.css">
+
+</head>
+<body>
+
+    <section>
+		<div class="header">
+			<img src="atmlogo.jpeg" alt="Girl in a jacket" style="width:70px;height:40px;">
+				<div class="menu">
+				  @Html.ActionLink("Admin Login","CheckLogin","Admin")
+				  <a href="homeloan.asp">Home Loans</a>
+				  <a href="investing.asp">Investing</a>
+				 @Html.ActionLink("About Us","About","Home")
+				  <a  href="help.asp" style="/* background: rebeccapurple; */border: 1px solid rebeccapurple;padding: 7px 10px;border-radius: 6px;color: rebeccapurple;font-weight: 600;font-family: sans-serif;font-size: 15px;"> HELP?</a>
+				</div>
+			
+		</div>
+	</section>
+	<section style="display: flex;">
+		<div class="sec-text">
+		   <h1 style="font-size: 80px;">ATM</h1>
+		   <p style="font-size: 25px;margin-top: -50px;">We support your financial Needs, Health and Safety </p>
+		   <div class="btn">
+			   <a class="button" style="background: rebeccapurple;"@Html.ActionLink("Create Admin","AddNewAdmin","Admin")</a>
+
+		   <a class="button" style="background: rebeccapurple;"@Html.ActionLink("Admin Login","CheckLogin","Admin")</a>
+		   <a class="button" style="background: rebeccapurple;"@Html.ActionLink("Create Customer","AddCustomer","Customer") </a>
+		   <a class="button" style="background: rebeccapurple;" @Html.ActionLink("Login Customer","CheckCustomer","Customer") </a>
+		   <a class="button" style="background: #126c01;font-size: 18px;" @Html.ActionLink("WithDrawal Money","WithDrawal","Customer") </a>
+		   </div>
+		</div>
+		<div class="sec-img">
+		   <img src="atm.png" alt="Girl in a jacket" style="width:650px;height:450px;">
+		</div>
+	</section>
+	
+
+     
+
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/jquery.magnific-popup.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>

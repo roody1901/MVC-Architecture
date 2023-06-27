@@ -1,0 +1,266 @@
+﻿@model IEnumerable<Customer>
+<style>
+body {
+  background-image: url("background.jpg");
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+li {
+  display: inline;
+}
+
+.header {
+	padding: 15px 100px;
+   background-color:lightgreen;
+}
+
+.logo {
+    background: bisque;
+    width: 20%;
+}
+
+.menu{
+	float: right;
+	padding-top: 7px;
+	font-size: 17px;
+
+}
+.search{
+    
+   width:10px;
+   height:5px;
+}
+  
+.menu a {
+    padding-right: 25px;
+    color: black;
+    text-decoration: none;
+}
+.withdraw {
+    background: red;
+    padding: 7px 10px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+.menu a:hover {
+    color: rebeccapurple;
+	font-size: 18px;
+	font-weight: 700px;
+	text-decoration: underline;
+}
+
+.sec-img{
+	width: 50%;
+	float:right;
+	padding-right: 75px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+.sec-text{
+	width: 50%;
+	    text-align: center;
+    margin: auto;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+    margin-right: 5px;
+	cursor: pointer;
+	border-radius: 20px;
+
+}
+
+.btn{
+    width: 70%;
+    margin: auto;
+}
+
+.container1{
+    padding-top: 20px;
+}
+
+.loginbtn{
+    background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.loginbtn:hover{
+    opacity: 0.8;
+}
+
+input[type=text], input[type=password], input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 16px 100px;
+  text-align: left;
+}
+
+.customer_details{
+    width: 80%;
+    margin: auto;
+}
+
+.customer_d{
+	width: 100%;
+}
+
+.customer_d h1{
+	text-align: center;
+}
+
+.maindetials{
+    width: 28%;
+    background: #e9e9e938;
+    padding: 15px;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid #00000029;
+    border-radius: 10px;
+}
+
+.secdetails{
+    display: inline-flex;
+	width: 100%
+}
+
+.cus_details{
+    display: inline-block;
+    width: 100%;
+}
+
+.secdetails p{
+    text-align:center;
+    margin: 5px;
+}
+
+.curdop{
+    margin: auto;
+    text-align: center;
+	padding-top: 5px;
+}
+
+.curdbtn{
+    background-color:lightgreen;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.curdbtn:hover{
+    background-color: #4CAF50;
+}
+      
+    
+</style>
+<body style="background-image:none;">
+ <h1 style="font-size: 40px;margin-bottom: 15px;text-align:center;">Admin Pannel</h1>
+<p>  
+   
+</p>  
+<section>
+    <div class="header">
+			<img src="~/atmlogo.jpeg" alt="Girl in a jacket" style="width:70px;height:40px;">
+				<div class="menu">       
+				   @Html.ActionLink("AddCustomer", "AddCustomer")
+				 @Html.ActionLink("Home", "Index","Home")
+				  <a href="investing.asp">Investing</a>
+				  <a href="about.asp">About Us</a>
+				  <a  href="help.asp" style="/* background: rebeccapurple; */border: 1px solid rebeccapurple;padding: 7px 10px;border-radius: 6px;color: rebeccapurple;font-weight: 600;font-family: sans-serif;font-size: 15px;"> HELP?</a>
+				  <form asp-controller="Customer" asp-action="GetAll" method="post">
+                 <input class="search" type="text"  name="getby" placeholder="Please enter customer Id and press enter"></input> </form>
+              </div>
+			
+    </div>
+</section>
+
+
+  
+ @foreach (var item in Model)  
+{
+     <section class="customer_details" style="display: flex;">
+       <div class="customer_d">
+          <div class="cus_details">
+           <div class="maindetials">
+               <div class="secdetails">
+                <p>@Html.DisplayNameFor(model => model.Id):<span style="font-weight:700px"> @Html.DisplayFor(modelItem => item.Id)   </span></p>
+            </div> 
+             <div class="secdetails">
+                <p>@Html.DisplayNameFor(model => model.Fullname) :<span style="font-weight:700px"> @Html.DisplayFor(modelItem => item.Fullname)</span></p>
+            </div>
+
+             <div class="secdetails">
+                <p>@Html.DisplayNameFor(model => model.Adress):<span style="font-weight:700px"> @Html.DisplayFor(modelItem => item.Adress)   </span></p>
+            </div>  
+            
+             <div class="secdetails">
+                <p>@Html.DisplayNameFor(model => model.Email):<span style="font-weight:700px"> @Html.DisplayFor(modelItem => item.Email)  </span></p>
+            </div>
+    
+             <div class="secdetails">
+                <p>@Html.DisplayNameFor(model => model.Contact):<span style="font-weight:700px">   @Html.DisplayFor(modelItem => item.Contact)   </span></p>
+            </div>
+
+             <div class="secdetails">
+                <p> @Html.DisplayNameFor(model => model.Atmpin):<span style="font-weight:700px">    @Html.DisplayFor(modelItem => item.Atmpin)   </span></p>
+            </div>
+
+             <div class="secdetails">
+                <p> @Html.DisplayNameFor(model => model.AccountType): <span style="font-weight:700px">  @Html.DisplayFor(modelItem => item.AccountType)   </span></p>
+            </div>
+
+              <div class="secdetails">
+                <p>  @Html.DisplayNameFor(model => model.AccountNumber):<span style="font-weight:700px">   @Html.DisplayFor(modelItem => item.AccountNumber)   </span></p>
+            </div>
+
+             <div class="secdetails">
+                <p> @Html.DisplayNameFor(model => model.Balance) : <span style="font-weight:700px"> @Html.DisplayFor(modelItem => item.Balance)</span></p>
+            </div>
+             <div class="curdop">
+				<div class="curdbtn">@Html.ActionLink("Edit", "Edit", new { id = item.Id}) </div>
+				<div class="curdbtn" > @Html.ActionLink("Delete", "Delete", new { id = item.Id })</div>
+               </div>
+          </div>    
+        </div>
+      </div>
+    </section>  
+}  
+</body>
+  
+
